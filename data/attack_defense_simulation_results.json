@@ -1,0 +1,444 @@
+{
+  "ablation_experiment": [
+    {
+      "config": "SM9",
+      "attacks": {
+        "A1": {
+          "threat": "Java Card Clone",
+          "result": "Blocked",
+          "details": "SM9 identity auth prevents clone usage",
+          "attack_succeeded": false
+        },
+        "A2": {
+          "threat": "DPA Key Recovery",
+          "result": "Cross-algorithm resistance",
+          "details": "DPA recovered AES-128 key (rho=0.62), but SM9 ECC-256 key system is independent",
+          "attack_succeeded": false
+        },
+        "A3": {
+          "threat": "RSP MITM",
+          "result": "Partially blocked",
+          "details": "SM9 authenticates endpoints but session key may be intercepted",
+          "attack_succeeded": false
+        },
+        "A4": {
+          "threat": "SIM Swap",
+          "result": "Blocked",
+          "details": "SM9 identity auth requires private key d_i, which attacker cannot obtain",
+          "attack_succeeded": false
+        }
+      }
+    },
+    {
+      "config": "QKD",
+      "attacks": {
+        "A1": {
+          "threat": "Java Card Clone",
+          "result": "Not blocked",
+          "details": "No identity verification",
+          "attack_succeeded": true
+        },
+        "A2": {
+          "threat": "DPA Key Recovery",
+          "result": "Not blocked",
+          "details": "DPA recovered AES-128 key (rho=0.62)",
+          "attack_succeeded": true
+        },
+        "A3": {
+          "threat": "RSP MITM",
+          "result": "Blocked",
+          "details": "QKD information-theoretic security prevents MITM",
+          "attack_succeeded": false
+        },
+        "A4": {
+          "threat": "SIM Swap",
+          "result": "Not blocked",
+          "details": "No identity verification, SIM Swap succeeds",
+          "attack_succeeded": true
+        }
+      }
+    },
+    {
+      "config": "PQC",
+      "attacks": {
+        "A1": {
+          "threat": "Java Card Clone",
+          "result": "Not blocked",
+          "details": "No identity verification",
+          "attack_succeeded": true
+        },
+        "A2": {
+          "threat": "DPA Key Recovery",
+          "result": "Not blocked",
+          "details": "DPA recovered AES-128 key (rho=0.62)",
+          "attack_succeeded": true
+        },
+        "A3": {
+          "threat": "RSP MITM",
+          "result": "Partially blocked",
+          "details": "PQC (ML-KEM) computationally secure against MITM",
+          "attack_succeeded": false
+        },
+        "A4": {
+          "threat": "SIM Swap",
+          "result": "Not blocked",
+          "details": "No identity verification, SIM Swap succeeds",
+          "attack_succeeded": true
+        }
+      }
+    },
+    {
+      "config": "SM9+QKD",
+      "attacks": {
+        "A1": {
+          "threat": "Java Card Clone",
+          "result": "Blocked",
+          "details": "SM9 identity auth prevents clone usage",
+          "attack_succeeded": false
+        },
+        "A2": {
+          "threat": "DPA Key Recovery",
+          "result": "Cross-algorithm resistance",
+          "details": "DPA recovered AES-128 key (rho=0.62), but SM9 ECC-256 key system is independent",
+          "attack_succeeded": false
+        },
+        "A3": {
+          "threat": "RSP MITM",
+          "result": "Blocked",
+          "details": "QKD information-theoretic security prevents MITM",
+          "attack_succeeded": false
+        },
+        "A4": {
+          "threat": "SIM Swap",
+          "result": "Blocked",
+          "details": "SM9 identity auth requires private key d_i, which attacker cannot obtain",
+          "attack_succeeded": false
+        }
+      }
+    },
+    {
+      "config": "SM9+PQC",
+      "attacks": {
+        "A1": {
+          "threat": "Java Card Clone",
+          "result": "Blocked",
+          "details": "SM9 identity auth prevents clone usage",
+          "attack_succeeded": false
+        },
+        "A2": {
+          "threat": "DPA Key Recovery",
+          "result": "Cross-algorithm resistance",
+          "details": "DPA recovered AES-128 key (rho=0.62), but SM9 ECC-256 key system is independent",
+          "attack_succeeded": false
+        },
+        "A3": {
+          "threat": "RSP MITM",
+          "result": "Partially blocked",
+          "details": "PQC (ML-KEM) computationally secure against MITM",
+          "attack_succeeded": false
+        },
+        "A4": {
+          "threat": "SIM Swap",
+          "result": "Blocked",
+          "details": "SM9 identity auth requires private key d_i, which attacker cannot obtain",
+          "attack_succeeded": false
+        }
+      }
+    },
+    {
+      "config": "QKD+PQC",
+      "attacks": {
+        "A1": {
+          "threat": "Java Card Clone",
+          "result": "Not blocked",
+          "details": "No identity verification",
+          "attack_succeeded": true
+        },
+        "A2": {
+          "threat": "DPA Key Recovery",
+          "result": "Not blocked",
+          "details": "DPA recovered AES-128 key (rho=0.62)",
+          "attack_succeeded": true
+        },
+        "A3": {
+          "threat": "RSP MITM",
+          "result": "Blocked",
+          "details": "QKD information-theoretic security prevents MITM",
+          "attack_succeeded": false
+        },
+        "A4": {
+          "threat": "SIM Swap",
+          "result": "Not blocked",
+          "details": "No identity verification, SIM Swap succeeds",
+          "attack_succeeded": true
+        }
+      }
+    },
+    {
+      "config": "SM9+QKD+PQC",
+      "attacks": {
+        "A1": {
+          "threat": "Java Card Clone",
+          "result": "Blocked",
+          "details": "SM9 identity auth prevents clone usage",
+          "attack_succeeded": false
+        },
+        "A2": {
+          "threat": "DPA Key Recovery",
+          "result": "Cross-algorithm resistance",
+          "details": "DPA recovered AES-128 key (rho=0.62), but SM9 ECC-256 key system is independent",
+          "attack_succeeded": false
+        },
+        "A3": {
+          "threat": "RSP MITM",
+          "result": "Blocked",
+          "details": "QKD information-theoretic security prevents MITM",
+          "attack_succeeded": false
+        },
+        "A4": {
+          "threat": "SIM Swap",
+          "result": "Blocked",
+          "details": "SM9 identity auth requires private key d_i, which attacker cannot obtain",
+          "attack_succeeded": false
+        }
+      }
+    }
+  ],
+  "iot_scenario_experiment": {
+    "connected_vehicle": {
+      "name": "Connected Vehicle T-Box",
+      "alpha": 0.4,
+      "sigma_range": [
+        2.0,
+        5.0
+      ],
+      "results": [
+        {
+          "attack": "A1",
+          "attack_type": "Java Card Clone",
+          "no_defense": "Success",
+          "no_defense_detail": "No identity verification",
+          "full_defense": "Blocked",
+          "full_defense_detail": "SM9 identity auth prevents clone usage"
+        },
+        {
+          "attack": "A2",
+          "attack_type": "DPA Key Recovery",
+          "no_defense": "Success",
+          "no_defense_detail": "DPA recovered AES-128 key (rho=0.80)",
+          "full_defense": "Blocked",
+          "full_defense_detail": "Masking prevents key recovery (rho=0.10)"
+        },
+        {
+          "attack": "A3",
+          "attack_type": "RSP MITM",
+          "no_defense": "Success",
+          "no_defense_detail": "No encryption on RSP channel",
+          "full_defense": "Blocked",
+          "full_defense_detail": "QKD information-theoretic security prevents MITM"
+        },
+        {
+          "attack": "A4",
+          "attack_type": "SIM Swap",
+          "no_defense": "Success",
+          "no_defense_detail": "No identity verification, SIM Swap succeeds",
+          "full_defense": "Blocked",
+          "full_defense_detail": "SM9 identity auth requires private key d_i, which attacker cannot obtain"
+        }
+      ]
+    },
+    "smart_meter": {
+      "name": "Smart Meter",
+      "alpha": 1.0,
+      "sigma_range": [
+        5.0,
+        10.0
+      ],
+      "results": [
+        {
+          "attack": "A1",
+          "attack_type": "Java Card Clone",
+          "no_defense": "Success",
+          "no_defense_detail": "No identity verification",
+          "full_defense": "Blocked",
+          "full_defense_detail": "SM9 identity auth prevents clone usage"
+        },
+        {
+          "attack": "A2",
+          "attack_type": "DPA Key Recovery",
+          "no_defense": "Success",
+          "no_defense_detail": "DPA recovered AES-128 key (rho=0.91)",
+          "full_defense": "Blocked",
+          "full_defense_detail": "Masking prevents key recovery (rho=0.12)"
+        },
+        {
+          "attack": "A3",
+          "attack_type": "RSP MITM",
+          "no_defense": "Success",
+          "no_defense_detail": "No encryption on RSP channel",
+          "full_defense": "Blocked",
+          "full_defense_detail": "QKD information-theoretic security prevents MITM"
+        },
+        {
+          "attack": "A4",
+          "attack_type": "SIM Swap",
+          "no_defense": "Success",
+          "no_defense_detail": "No identity verification, SIM Swap succeeds",
+          "full_defense": "Blocked",
+          "full_defense_detail": "SM9 identity auth requires private key d_i, which attacker cannot obtain"
+        }
+      ]
+    },
+    "industrial_sensor": {
+      "name": "Industrial Sensor",
+      "alpha": 0.8,
+      "sigma_range": [
+        3.0,
+        5.0
+      ],
+      "results": [
+        {
+          "attack": "A1",
+          "attack_type": "Java Card Clone",
+          "no_defense": "Success",
+          "no_defense_detail": "No identity verification",
+          "full_defense": "Blocked",
+          "full_defense_detail": "SM9 identity auth prevents clone usage"
+        },
+        {
+          "attack": "A2",
+          "attack_type": "DPA Key Recovery",
+          "no_defense": "Success",
+          "no_defense_detail": "DPA recovered AES-128 key (rho=0.89)",
+          "full_defense": "Blocked",
+          "full_defense_detail": "Masking prevents key recovery (rho=0.16)"
+        },
+        {
+          "attack": "A3",
+          "attack_type": "RSP MITM",
+          "no_defense": "Success",
+          "no_defense_detail": "No encryption on RSP channel (batch impact!)",
+          "full_defense": "Blocked",
+          "full_defense_detail": "QKD information-theoretic security prevents MITM"
+        },
+        {
+          "attack": "A4",
+          "attack_type": "SIM Swap",
+          "no_defense": "Success",
+          "no_defense_detail": "No identity verification, SIM Swap succeeds",
+          "full_defense": "Blocked",
+          "full_defense_detail": "SM9 identity auth requires private key d_i, which attacker cannot obtain"
+        }
+      ]
+    }
+  },
+  "defense_quantification": {
+    "no_defense_rate": "0.8%",
+    "sm9_only_rate": "0.08%",
+    "sm9_qkd_rate": "0.003%",
+    "sm9_qkd_pqc_rate": "0.003%",
+    "improvement_factor_sm9": "10x",
+    "improvement_factor_sm9_qkd": "267x",
+    "note": "Attack rate based on operator operational data (Refs [4][5])"
+  },
+  "authentication_delay_comparison": [
+    {
+      "name": "5G-AKA",
+      "auth_delay_ms": 10.0,
+      "key_delay_ms": 0,
+      "quantum_safe": false,
+      "iot_fit": "3GPP standard",
+      "total_delay_ms": 10.0
+    },
+    {
+      "name": "EAP-AKA'",
+      "auth_delay_ms": 8.5,
+      "key_delay_ms": 0,
+      "quantum_safe": false,
+      "iot_fit": "WiFi-IoT hybrid",
+      "total_delay_ms": 8.5
+    },
+    {
+      "name": "PQC-AKA (ML-KEM)",
+      "auth_delay_ms": 3.5,
+      "key_delay_ms": 2.8,
+      "quantum_safe": true,
+      "iot_fit": "Requires PQC hardware",
+      "total_delay_ms": 6.3
+    },
+    {
+      "name": "SM9",
+      "auth_delay_ms": 5.0,
+      "key_delay_ms": 0,
+      "quantum_safe": false,
+      "iot_fit": "National crypto standard",
+      "total_delay_ms": 5.0
+    },
+    {
+      "name": "SM9+QKD (30km)",
+      "auth_delay_ms": 5.0,
+      "key_delay_ms": 1.0,
+      "quantum_safe": true,
+      "iot_fit": "QKD fiber deployment",
+      "total_delay_ms": 6.0
+    },
+    {
+      "name": "SM9+QKD+PQC backup",
+      "auth_delay_ms": 5.0,
+      "key_delay_ms": 1.12,
+      "quantum_safe": true,
+      "iot_fit": "Full-scenario coverage",
+      "total_delay_ms": 6.12
+    }
+  ],
+  "attack_defense_modules": [
+    {
+      "module": "A1",
+      "type": "Attack",
+      "description": "Java Card type confusion clone",
+      "iot": "All eUICC devices"
+    },
+    {
+      "module": "A2",
+      "type": "Attack",
+      "description": "DPA side-channel key recovery",
+      "iot": "Physically accessible devices"
+    },
+    {
+      "module": "A3",
+      "type": "Attack",
+      "description": "RSP MITM / profile forgery",
+      "iot": "Batch-provisioned IoT devices"
+    },
+    {
+      "module": "A4",
+      "type": "Attack",
+      "description": "SIM Swap identity hijacking",
+      "iot": "Connected vehicles / Smart meters"
+    },
+    {
+      "module": "D1",
+      "type": "Defense",
+      "description": "SM9 identity authentication",
+      "iot": "All IoT devices"
+    },
+    {
+      "module": "D2",
+      "type": "Defense",
+      "description": "Masking + noise side-channel defense",
+      "iot": "Physically accessible devices"
+    },
+    {
+      "module": "D3",
+      "type": "Defense",
+      "description": "QKD information-theoretic secure key",
+      "iot": "QKD fiber coverage area"
+    },
+    {
+      "module": "D4",
+      "type": "Defense",
+      "description": "PQC post-quantum key backup",
+      "iot": "All IoT devices"
+    }
+  ]
+}
