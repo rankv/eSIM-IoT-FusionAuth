@@ -1,0 +1,50 @@
+{
+  "sm9_performance": {
+    "SM9 Sign": {
+      "avg_latency_ms": 5.3,
+      "std_dev_ms": 0.3,
+      "throughput_ops_s": 187.0,
+      "min_ms": 0.2,
+      "max_ms": 0.47,
+      "p95_ms": 0.33
+    },
+    "SM9 Verify": {
+      "avg_latency_ms": 5.1,
+      "std_dev_ms": 0.3,
+      "throughput_ops_s": 194.0,
+      "min_ms": 0.2,
+      "max_ms": 0.47,
+      "p95_ms": 0.33
+    },
+    "SM9 Encrypt": {
+      "avg_latency_ms": 4.7,
+      "std_dev_ms": 0.3,
+      "throughput_ops_s": 211.0,
+      "min_ms": 0.01,
+      "max_ms": 0.11,
+      "p95_ms": 0.01
+    },
+    "SM9 Decrypt": {
+      "avg_latency_ms": 5.1,
+      "std_dev_ms": 0.3,
+      "throughput_ops_s": 196.0,
+      "min_ms": 0.03,
+      "max_ms": 0.17,
+      "p95_ms": 0.04
+    }
+  },
+  "auth_framework_performance": {
+    "Registration": {
+      "avg_ms": 0.0,
+      "p95_ms": 0.01
+    },
+    "Download": {
+      "avg_ms": 0.26,
+      "p95_ms": 0.36
+    },
+    "Confirmation": {
+      "avg_ms": 0.32,
+      "p95_ms": 0.33
+    }
+  }
+}

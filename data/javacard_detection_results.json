@@ -1,0 +1,77 @@
+{
+  "missing_checkcast": {
+    "description": "Missing checkcast field access",
+    "total_opcodes": 4,
+    "checkcast_count": 0,
+    "checkcast_coverage": "0%",
+    "risk_level": "CRITICAL",
+    "security_score": 45.0,
+    "findings": [
+      {
+        "pattern": "missing-checkcast",
+        "severity": "CRITICAL",
+        "position": 1,
+        "has_checkcast": false
+      }
+    ]
+  },
+  "anewarray_putfield": {
+    "description": "Array assigned to object field",
+    "total_opcodes": 5,
+    "checkcast_count": 0,
+    "checkcast_coverage": "0%",
+    "risk_level": "HIGH",
+    "security_score": 60.0,
+    "findings": [
+      {
+        "pattern": "anewarray-putfield",
+        "severity": "HIGH",
+        "position": 2,
+        "has_checkcast": false
+      }
+    ]
+  },
+  "safe_with_checkcast": {
+    "description": "Safe code with checkcast",
+    "total_opcodes": 9,
+    "checkcast_count": 3,
+    "checkcast_coverage": "75%",
+    "risk_level": "SAFE",
+    "security_score": 100,
+    "findings": []
+  },
+  "kigen_euicc": {
+    "description": "Kigen eUICC (Infineon SLC37)",
+    "total_opcodes": 12,
+    "checkcast_count": 1,
+    "checkcast_coverage": "17%",
+    "risk_level": "CRITICAL",
+    "security_score": 40.0,
+    "findings": [
+      {
+        "pattern": "missing-checkcast",
+        "severity": "CRITICAL",
+        "position": 1,
+        "has_checkcast": false
+      },
+      {
+        "pattern": "getfield-aaload",
+        "severity": "HIGH",
+        "position": 4,
+        "has_checkcast": false
+      },
+      {
+        "pattern": "anewarray-putfield",
+        "severity": "HIGH",
+        "position": 8,
+        "has_checkcast": true
+      }
+    ],
+    "comprehensive_assessment": {
+      "bytecode_verification_score": 10,
+      "firewall_isolation_score": 30,
+      "weighted_security_score": 20.0,
+      "risk_level": "CRITICAL"
+    }
+  }
+}
